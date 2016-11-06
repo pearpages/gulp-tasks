@@ -1,7 +1,16 @@
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 
-gulp.task('default', function () {
-    console.log('HELLO WORLD');
+gulp.task('default', function (callback) {
+    runSequence('build', callback);
+});
+
+gulp.task('build', function(callback) {
+    runSequence('clean', 'copy-build', callback);
+});
+
+gulp.task('clean', function(callback) {
+
 });
 
 gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
