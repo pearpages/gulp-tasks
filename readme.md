@@ -35,3 +35,10 @@ Therefore, sometimes we need to run them sequentially.
 ```
 npm install --save-dev run-sequence
 ```
+
+## delete files
+
+```
+npm install --save-dev del
+```
+
