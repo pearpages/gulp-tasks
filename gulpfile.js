@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
+var del = require('del');
 
 gulp.task('default', function (callback) {
     runSequence('build', callback);
@@ -9,8 +10,8 @@ gulp.task('build', function(callback) {
     runSequence('clean', 'copy-build', callback);
 });
 
-gulp.task('clean', function(callback) {
-
+gulp.task('clean', function() {
+    return del(['./build'], {force:true});
 });
 
 // dependencies are run before
