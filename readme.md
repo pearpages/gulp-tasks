@@ -42,3 +42,8 @@ npm install --save-dev run-sequence
 npm install --save-dev del
 ```
 
+## injecting
+
+```
+npm install --save-dev gulp-inject
+```
