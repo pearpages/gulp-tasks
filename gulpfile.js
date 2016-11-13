@@ -17,7 +17,9 @@ gulp.task('clean', function() {
 
 gulp.task('index', function () {
     var tpl_src = ['./build/vendor/**/*.js',
+    './build/app/**/*.module.js',
     './build/app/**/*.js',
+    '!./build/app/**/*.spec.js',
     './build/assets/css/**/*.css'
     ];
     return gulp.src('./src/index.html')
