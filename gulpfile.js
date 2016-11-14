@@ -2,18 +2,21 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var del = require('del');
 var inject = require('gulp-inject');
+var serve = require('gulp-serve');
 
 gulp.task('default', function (callback) {
     runSequence('build', callback);
 });
 
 gulp.task('build', function(callback) {
-    runSequence('clean', 'copy-build', 'index', callback);
+    runSequence('clean', 'copy-build', 'index', 'serve', callback);
 });
 
 gulp.task('clean', function() {
     return del(['./build'], {force:true});
 });
+
+gulp.task('serve', serve('build'));
 
 gulp.task('index', function () {
     var tpl_src = ['./build/vendor/**/*.js',

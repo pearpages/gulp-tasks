@@ -32,18 +32,24 @@ gulp copy-build
 
 Therefore, sometimes we need to run them sequentially.
 
-```
+```bash
 npm install --save-dev run-sequence
 ```
 
 ## delete files
 
-```
+```bash
 npm install --save-dev del
 ```
 
 ## injecting
 
-```
+```bash
 npm install --save-dev gulp-inject
+```
+
+## serve
+
+```bash
+npm install --save-dev gulp-serve
 ```
