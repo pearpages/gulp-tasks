@@ -53,3 +53,9 @@ npm install --save-dev gulp-inject
 ```bash
 npm install --save-dev gulp-serve
 ```
+
+## hint 
+
+```bash
+npm install --save-dev gulp-jshint
+```

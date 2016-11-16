@@ -4,6 +4,7 @@ var del = require('del');
 var inject = require('gulp-inject');
 var serve = require('gulp-serve');
 var files = require('./gulp/gulp.config.js');
+var jshint = require('gulp-jshint');
 
 gulp.task('default', function (callback) {
     runSequence('build', 'serve', callback);
@@ -15,6 +16,16 @@ gulp.task('build', function(callback) {
 
 gulp.task('clean', function() {
     return del([files.build_dir], {force:true});
+});
+
+gulp.task('watch', function () {
+    gulp.watch(files.app_files.js,['lint','build']);
+});
+
+gulp.task('lint', function () {
+    return gulp.src(files.app_files.js)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 gulp.task('serve', serve('build'));
